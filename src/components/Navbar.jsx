@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return (
-    <header className="w-full">
+    <header className="w-full flex items-center justify-center bg-[#1A1A1A]">
         <div className="w-full max-w-[1500px] flex items-center justify-between py-7 px-10 bg-[#1A1A1A]">
         <Link className="flex items-center gap-2">
             <img src="../src/assets/swirl-logo.svg" alt="Swirl Logo" className="size-8" />
