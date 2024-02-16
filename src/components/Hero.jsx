@@ -1,7 +1,9 @@
 import HeroStats from "./HeroStats";
 import MoonEffect from '../assets/mooneffect.png'
+import HeroAvatar from "./HeroAvatar";
 
 const Hero = () => {
+
   return (
     <section className="w-full grid grid-rows-2 lg:grid-cols-5 lg:grid-rows-none bg-[#141414]">
       <div className="row-span-1 lg:col-span-3 bg-transparent flex flex-col items-start justify-start pt-[100px]">
@@ -12,8 +14,9 @@ const Hero = () => {
         </div>
         <HeroStats />
       </div>
-      <div className="row-span-1 lg:col-span-2 bg-transparent pt-[150px] relative">
-        <img src={MoonEffect} alt="Moon effect" className="w-full h-[400px]  absolute top-0 left-0" />
+      <div className="row-span-1 lg:col-span-2 bg-transparent pt-[100px] relative overflow-hidden flex flex-col items-start justify-end">
+        <img src={MoonEffect} alt="Moon effect" className="w-full h-[550px] absolute top-0 left-0" />
+        <HeroAvatar />
       </div>
     </section>
   )
