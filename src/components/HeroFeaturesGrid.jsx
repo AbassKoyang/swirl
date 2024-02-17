@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 
 const HeroFeaturesGrid = () => {
   return (
-    <div className="w-full grid grid-cols-3 px-[162px] py-[50px] border-y border-y-[#262626]">
-        <div className="col-span-1 flex items-center gap-3">
+    <div className="w-full grid grid-cols-3 py-[50px] border-y border-y-[#262626]">
+        <div className="col-span-1 flex items-center justify-between lg:pl-[50px] 2xl:pl-20">
             <div className="">
                 <img src={NewsUpdateIcon} alt="News Update Icon" className='lg:size-[40px] 2xl:size-[50px]' />
                 <p className='font-medium font-inter lg:text-lg 2xl:text-xl text-white mt-3'>Latest Tech News Updates</p>
@@ -19,7 +19,7 @@ const HeroFeaturesGrid = () => {
                 <img src={ArrowButtonIcon} alt="Link to Latest news page" className='lg:size-[44px] 2xl:size-[52px]' />
             </Link>
         </div>
-        <div className="col-span-1 flex items-center gap-3">
+        <div className="col-span-1 flex items-center justify-between lg:px-[50px] 2xl:px-20">
             <div className="">
                 <img src={GlobalReadershipIcon} alt="News Update Icon" className='lg:size-[40px] 2xl:size-[50px]' />
                 <p className='font-medium font-inter lg:text-lg 2xl:text-xl text-white mt-3'>Global Readership</p>
@@ -31,7 +31,7 @@ const HeroFeaturesGrid = () => {
                 <img src={ArrowButtonIcon} alt="Link to Latest news page" className='lg:size-[44px] 2xl:size-[52px]' />
             </Link>
         </div>
-        <div className="col-span-1 flex items-center gap-3">
+        <div className="col-span-1 flex items-center justify-between lg:pr-[50px] 2xl:pr-20">
             <div className="">
                 <img src={ExpertContributorsIcon} alt="News Update Icon" className='lg:size-[40px] 2xl:size-[50px]' />
                 <p className='font-medium font-inter text-xl text-white mt-3'>Expert Writers</p>

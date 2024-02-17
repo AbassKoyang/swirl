@@ -15,7 +15,7 @@ const Hero = () => {
         </div>
         <HeroStats />
       </div>
-      <div className="col-span-5 lg:col-span-2 self-start bg-transparent pt-[100px] pb-[40px] relative overflow-hidden flex flex-col items-start justify-end px-5 lg:pl-10 lg:pr-0">
+      <div className="col-span-5 lg:col-span-2 self-start lg:self-stretch bg-transparent pt-[100px] pb-[40px] relative overflow-hidden flex flex-col items-start justify-end px-5 lg:pl-10 lg:pr-0 border-l border-l-[#262626]">
         <img src={MoonEffect} alt="Moon effect" className="w-full lg:w-[80%] lg:h-[500px] absolute -top-2 -left-2 lg:-top-3 lg:-left-3" />
         <div className="p-[24px] lg:p-[50px] 2xl:p-[80px] z-20">
           <HeroAvatar />
