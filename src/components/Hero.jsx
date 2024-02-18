@@ -7,7 +7,7 @@ const Hero = () => {
 
   return (
     <section className="w-full grid grid-cols-5 bg-[#141414]">
-      <div className="col-span-5 lg:col-span-3 self-start bg-transparent flex flex-col items-start justify-start pt-[40px] lg:pt-[100px] px-5 lg:pl-10 lg:pr-0">
+      <div className="col-span-5 lg:col-span-3 self-start bg-transparent flex flex-col items-start justify-start pt-[40px] lg:pt-[100px] px-5 lg:pl-10 2xl:pl-[162px] lg:pr-0">
         <div className="w-full lg:pr-10 mb-[30px] lg:mb-[80px]">
             <p className="text-lg lg:text-[22px] font-medium font-kumbh text-[#666666]">Your Journey to Tomorrow Begins Here</p>
             <h1 className="text-[30px] lg:text-[55px] leading-none 2xl:text-7xl font-medium font-kumbh text-white my-[14px] lg:my-4 lg:mt-6">Explore the Frontiers of Artificial Intelligence</h1>
@@ -15,7 +15,7 @@ const Hero = () => {
         </div>
         <HeroStats />
       </div>
-      <div className="col-span-5 lg:col-span-2 self-start lg:self-stretch bg-transparent pt-[100px] relative overflow-hidden flex flex-col items-start justify-end px-5 lg:pl-10 lg:pr-0 border-l border-l-[#262626]">
+      <div className="col-span-5 lg:col-span-2 self-start lg:self-stretch bg-transparent pt-[100px] relative overflow-hidden flex flex-col items-start justify-end px-5 lg:pl-10 lg:pr-0 2xl:pr-[162px] border-l border-l-[#262626]">
         <img src={MoonEffect} alt="Moon effect" className="w-full lg:w-[80%] lg:h-[500px] absolute -top-2 -left-2 lg:-top-3 lg:-left-3" />
         <div className="p-[24px] lg:p-[50px] 2xl:p-[80px] z-20">
           <HeroAvatar />
