@@ -4,6 +4,8 @@ import HeroFeaturesGrid from "../components/HeroFeaturesGrid";
 import SubheadingCon from "../components/SubheadingCon";
 import techBlogIcon from "../assets/techblogicon.svg"
 import researchBlogIcon from "../assets/researchblogicon.svg"
+import { Outlet } from "react-router-dom";
+import LandingPageBlogLayout from "../components/LandingPageBlogLayout";
 
 const Home = () => {
   return (
@@ -40,6 +42,7 @@ const Home = () => {
       </div>
       <SubheadingCon heading='Explore in-depth blog posts on swirl' text='A Knowledge Treasure Trove' style='' />
       </section>
+      <LandingPageBlogLayout />
     </section>
   )
 }
