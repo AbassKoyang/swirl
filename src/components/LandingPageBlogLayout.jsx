@@ -32,19 +32,19 @@ const LandingPageBlogLayout = () => {
                 <LandingPageBlog name="John Techson" field="Cloud Computing" date="October 15, 2023" title="The Quantum Leap in Computing" excerpt="Explore the revolution in quantum computing, its applications, and its potential impact on various industries." no_likes={24.5} no_comments={50} no_shares={20} />
             )}
             {category === 'design-systems' && (
-                <LandingPageBlog title='design-systems' />
+                <LandingPageBlog name="John Techson" field="Cloud Computing" date="October 15, 2023" title="The Quantum Leap in Computing" excerpt="Explore the revolution in quantum computing, its applications, and its potential impact on various industries." no_likes={24.5} no_comments={50} no_shares={20} />
             )}
             {category === 'front-end' && (
-                <LandingPageBlog title='front-end' />
+                <LandingPageBlog name="John Techson" field="Cloud Computing" date="October 15, 2023" title="The Quantum Leap in Computing" excerpt="Explore the revolution in quantum computing, its applications, and its potential impact on various industries." no_likes={24.5} no_comments={50} no_shares={20} />
             )}
             {category === 'ai-ml' && (
-                <LandingPageBlog title='ai-ml' />
+                <LandingPageBlog name="John Techson" field="Cloud Computing" date="October 15, 2023" title="The Quantum Leap in Computing" excerpt="Explore the revolution in quantum computing, its applications, and its potential impact on various industries." no_likes={24.5} no_comments={50} no_shares={20} />
             )}
             {category === 'cloud-computing' && (
-                <LandingPageBlog title='cloud-computing' />
+                <LandingPageBlog name="John Techson" field="Cloud Computing" date="October 15, 2023" title="The Quantum Leap in Computing" excerpt="Explore the revolution in quantum computing, its applications, and its potential impact on various industries." no_likes={24.5} no_comments={50} no_shares={20} />
             )}
             {category === 'back-end' && (
-                <LandingPageBlog title='ai-ml' />
+                <LandingPageBlog name="John Techson" field="Cloud Computing" date="October 15, 2023" title="The Quantum Leap in Computing" excerpt="Explore the revolution in quantum computing, its applications, and its potential impact on various industries." no_likes={24.5} no_comments={50} no_shares={20} />
             )}
         </div>
     </section>
