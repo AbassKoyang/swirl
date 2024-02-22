@@ -48,7 +48,7 @@ const LandingPageBlog = ({name, field, date, title, excerpt, no_likes, no_commen
           </div>
         </div>
 
-        <LandingPageButton text='View Blog' styles='w-fit flex items-center justify-center gap-5 2xl:gap-[10px] px-[20px] py-4 2xl:px-[24px] 2xl:py-[18px] mt-[20px] 2xl:mt-[30px] bg-[#141414] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:bg-[#1A1A1A] hover:font-medium transition-all duration-200 ease-in-out' />
+        <LandingPageButton text='View Blog' styles='w-fit flex items-center justify-center gap-3 2xl:gap-[10px] px-[18px] py-4 2xl:px-[24px] 2xl:py-[18px] mt-[20px] 2xl:mt-[30px] bg-[#141414] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:bg-[#1A1A1A] hover:font-medium transition-all duration-200 ease-in-out' />
      </div>
 
 
