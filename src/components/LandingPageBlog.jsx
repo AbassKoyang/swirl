@@ -1,14 +1,15 @@
-import blogAuthorPic1 from '../assets/blogauthor1.png';
 import LandingPageButton from './LandingPageButton';
 
 
-const LandingPageBlog = ({name, field, date, title, excerpt, no_likes, no_comments, no_shares}) => {
+const LandingPageBlog = ({name, profile_pic, field, date, title, excerpt, no_likes, no_comments, no_shares}) => {
   return (
     <div className="w-full flex flex-col px-5 py-10 lg:px-10 lg:py-[60px] 2xl:px-[162px] 2xl:py-[80px] border-y border-y-[#262626]">
      <div className="w-full flex items-center justify-between">
-      <div className="flex gap-[10px] items-center">
+
+        <div className="w-fit flex items-center">
+        <div className="flex gap-[10px] items-center lg:mr-[80px] 2xl:mr-[100px]">
           <div className="size-[60px] 2xl:size-20 rounded-full overflow-hidden">
-            <img src={blogAuthorPic1} alt="Profile pic" className='w-full object-cover' />
+            <img src={profile_pic} alt="Profile pic" className='w-full object-cover' />
           </div>
           <div className="">
             <h4 className='font-inter font-medium text-white text-lg 2xl:text-xl mt-[2px]'>{name}</h4>
@@ -46,6 +47,7 @@ const LandingPageBlog = ({name, field, date, title, excerpt, no_likes, no_commen
               <p className='font-kumbh font-normal  text-[#98989A] text-sm 2xl:text-lg'>{no_shares}</p>
             </button>
           </div>
+        </div>
         </div>
 
         <LandingPageButton text='View Blog' styles='w-fit flex items-center justify-center gap-3 2xl:gap-[10px] px-[18px] py-4 2xl:px-[24px] 2xl:py-[18px] mt-[20px] 2xl:mt-[30px] bg-[#141414] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:bg-[#1A1A1A] hover:font-medium transition-all duration-200 ease-in-out' />
