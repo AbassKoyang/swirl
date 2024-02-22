@@ -29,7 +29,7 @@ const LandingPageBlogLayout = () => {
         </div>
         <div className="w-full">
             {category === 'all' && (
-                <LandingPageBlog title='all' />
+                <LandingPageBlog name="John Techson" field="Cloud Computing" date="October 15, 2023" title="The Quantum Leap in Computing" excerpt="Explore the revolution in quantum computing, its applications, and its potential impact on various industries." no_likes={24.5} no_comments={50} no_shares={20} />
             )}
             {category === 'design-systems' && (
                 <LandingPageBlog title='design-systems' />
