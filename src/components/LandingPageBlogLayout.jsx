@@ -7,7 +7,7 @@ import blogAuthorPic3 from '../assets/blogauthor3.png';
 const LandingPageBlogLayout = () => {
     const [category, setCategory] = useState('all');
   return (
-    <section className="w-full">
+    <div className="w-full">
         <div className="w-full overflow-x-auto bg-[#141414]">
         <div className="w-[1300px] lg:w-full p-5 lg:p-10 2xl:px-[162px] 2xl:py-[50px] gap-[14px] lg:gap-[14px] 2xl:gap-5 bg-[#141414] flex items-center justify-center">
             <button onClick={() => setCategory('all')}  className={`px-16 h-[56px] py-4 lg:py-0 lg:px-0 lg:w-[200px] lg:h-[68px] 2xl:w-[250px] 2xl:h-[87px] border border-[#262626] flex justify-center items-center font-inter font-meium lg:font-normal text-sm 2xl:text-lg ${category === 'all' ? 'text-white bg-[#1A1A1A]' : 'text-[#98989A]' } hover:text-white hover:bg-[#1A1A1A] rounded-[7px] 2xl:round-lg transition-all duration-200 ease-in-out`}>
@@ -74,7 +74,7 @@ const LandingPageBlogLayout = () => {
                 </>
             )}
         </div>
-    </section>
+    </div>
   )
 }
 
