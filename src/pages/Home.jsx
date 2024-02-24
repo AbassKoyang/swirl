@@ -63,7 +63,14 @@ const Home = () => {
             <img src={usersAvatar} alt="Users Avatar Grouped together" className="w-[150] h-[56px] 2xl:w-[193px] 2xl:h-[70px]" />
           </div>
         </div>
-        <div className="col-span-5 lg:col-span-3"></div>
+        <div className="col-span-5 lg:col-span-3 2xl:p-20 pr-0">
+          <div className="w-full flex justify-between mb-[30px] items-center ">
+            <h4 className="font-inter font-semibold text-white 2xl:text-2xl">Variety of Topics</h4>
+            <p className="font-inter 2xl:text-lg text-[#98989A]">
+            Topics include AI in education (25%), renewable energy (20%), healthcare (15%), space exploration (25%), and biotechnology (15%).
+            </p>
+          </div>
+        </div>
       </div>
     </section>
     </section>
