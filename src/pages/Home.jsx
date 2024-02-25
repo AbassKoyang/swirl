@@ -122,7 +122,7 @@ const Home = () => {
                 <p className="font-inter text-[#98989A] text-sm lg:text-[16px] 2xl:text-lg mb-[2px] lg:mb-1">Total Whitepapers</p>
                 <h3 className='font-semibold font-inter text-[16px] lg:text-lg 2xl:text-xl text-white '>Over 50 whitepapers</h3>
               </div>
-              <div className="w-full lg:w-[66%] flex items-center justify-between p-5 lg:p-6 2xl:p-[30px] bg-[#1A1A1A] border border-[#262626] rounded-xl">
+              <div className="w-full lg:w-[63%] flex items-center justify-between p-5 lg:p-6 2xl:p-[30px] bg-[#1A1A1A] border border-[#262626] rounded-xl">
                 <div className="">
                 <p className="font-inter text-[#98989A] text-sm lg:text-[16px] 2xl:text-lg mb-[2px] lg:mb-1">Download Formats</p>
                 <h3 className='font-semibold font-inter text-[16px] lg:text-lg 2xl:text-xl text-white '>PDF format for access</h3>
@@ -139,6 +139,9 @@ const Home = () => {
               </div>
             </div>
           </div>
+    </section>
+    <section className="w-full">
+    <SubheadingCon heading="Real Words from Real Readers" text='What our readers have to say' styles='w-full md:w-fit flex items-center justify-center gap-5 2xl:gap-[10px] px-[20px] py-4 2xl:px-[24px] 2xl:py-[18px] mt-[30px] lg:mt-0 bg-[#141414] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:font-medium transition-all duration-200 ease-in-out' buttonText='View All Testimonials' containerStyles="flex-col lg:flex-row justify-between" />
     </section>
     </section>
   )
