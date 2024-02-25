@@ -72,7 +72,7 @@ const Home = () => {
             Topics include Front-end (25%), backend (20%), cloud (15%), design systems (25%), and DevOps (15%).
             </p>
             </div>
-            <img src={vrLady} alt="A lady wearing the vison pro" className="w-full h-[169px] md:h-[] mb-6 2xl:mb-[30px]" />
+            <img src={vrLady} alt="A lady wearing the vison pro" className="w-full h-[169px] lg:h-[332px] 2xl:h-[275px] mb-6 2xl:mb-[30px]" />
             <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-4">
               <div className="w-full lg:w-fit p-5 lg:p-6 2xl:p-[30px] bg-[#1A1A1A] border border-[#262626] rounded-xl">
                 <p className="font-inter text-[#98989A] text-sm lg:text-[16px] 2xl:text-lg mb-[2px] lg:mb-1">Total Ebooks</p>
@@ -98,9 +98,9 @@ const Home = () => {
       <div className="w-full grid grid-cols-5 px-5 lg:px-10 2xl:px-[162px] bg-[#141414] border-b border-b-[#262626]">
         <div className="col-span-5 lg:col-span-2 flex flex-col justify-center py-10 lg:py-[60px] 2xl:py-20 lg:pr-[60px] 2xl:pr-20 border-b border-b-[#262626] lg:border-r lg:border-r-[#262626]">
           <img src={ebookIcon} alt="Ebook Icon" className="size-[50px] lg:size-[60px] 2xl:size-20 mb-6 lg:mb-[30px] 2xl:mb-[50px]" />
-          <h3 className="font-kumbh font-semibold text-white text-2xl lg:text-[30px] 2xl:text-[40px] mb-1 lg:mb-[10px] 2xl:mb-4">Ebooks</h3>
-          <p className="font-normal font-inter text-[#98989A] text-sm lg:text-lg 2xl:text-xl mb-6 lg:mb-[30px] 2xl:mb-[50px]">Explore our collection of ebooks covering a wide spectrum of future technology topics.</p>
-          <LandingPageButton text='Download Ebooks Now' styles='w-full flex items-center justify-center gap-5 2xl:gap-[14px] px-[20px] py-4 2xl:px-[24px] 2xl:py-[18px] bg-[#1A1A1A] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:font-medium transition-all duration-200 ease-in-out' />
+          <h3 className="font-kumbh font-semibold text-white text-2xl lg:text-[30px] 2xl:text-[40px] mb-1 lg:mb-[10px] 2xl:mb-4">Whitepapers</h3>
+          <p className="font-normal font-inter text-[#98989A] text-sm lg:text-lg 2xl:text-xl mb-6 lg:mb-[30px] 2xl:mb-[50px]">Dive into comprehensive reports and analyses with our collection of whitepapers.</p>
+          <LandingPageButton text='Download Whitepapers Now' styles='w-full flex items-center justify-center gap-5 2xl:gap-[14px] px-[20px] py-4 2xl:px-[24px] 2xl:py-[18px] bg-[#1A1A1A] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:font-medium transition-all duration-200 ease-in-out' />
           <div className="w-fit flex items-center gap-[30px] 2xl:gap-[50px] py-5 px-[30px] lg:p-5 2xl:p-[30px] mt-5 lg:mt-10 2xl:mt-[60px] rounded-xl bg-[#1A1A1A] border border-[#262626]">
             <div className="">
               <p className="font-inter text-sm 2xl:text-lg text-[#98989A] 2xl:mb-1">Downloaded by</p>
@@ -111,16 +111,16 @@ const Home = () => {
         </div>
         <div className="col-span-5 lg:col-span-3 py-10 lg:p-[60px] 2xl:p-20 lg:pr-0">
             <div className="w-full flex flex-col lg:flex-row lg:justify-between mb-5 lg:mb-6 2xl:mb-[30px] lg:items-center ">
-            <h4 className="font-inter font-semibold text-white text-lg lg:text-xl 2xl:text-2xl mb-[10px] mr-0 lg:mr-5">Variety of Topics</h4>
+            <h4 className="font-inter font-semibold text-white text-lg lg:text-xl 2xl:text-2xl mb-[10px] mr-0 lg:mr-5">Topics Coverage</h4>
             <p className="font-inter lg:text-[16px] text-sm 2xl:text-lg text-[#98989A] lg:max-w-[70%]">
-            Topics include Front-end (25%), backend (20%), cloud (15%), design systems (25%), and DevOps (15%).
+            Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).
             </p>
             </div>
-            <img src={vrLady} alt="A lady wearing the vison pro" className="w-full h-[169px] md:h-[] mb-6 2xl:mb-[30px]" />
+            <img src={vrLady} alt="A lady wearing the vison pro" className="w-full h-[169px] lg:h-[332px] 2xl:h-[275px] mb-6 2xl:mb-[30px]" />
             <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-4">
               <div className="w-full lg:w-fit p-5 lg:p-6 2xl:p-[30px] bg-[#1A1A1A] border border-[#262626] rounded-xl">
-                <p className="font-inter text-[#98989A] text-sm lg:text-[16px] 2xl:text-lg mb-[2px] lg:mb-1">Total Ebooks</p>
-                <h3 className='font-semibold font-inter text-[16px] lg:text-lg 2xl:text-xl text-white '>Over 100 ebooks</h3>
+                <p className="font-inter text-[#98989A] text-sm lg:text-[16px] 2xl:text-lg mb-[2px] lg:mb-1">Total Whitepapers</p>
+                <h3 className='font-semibold font-inter text-[16px] lg:text-lg 2xl:text-xl text-white '>Over 50 whitepapers</h3>
               </div>
               <div className="w-full lg:w-[66%] flex items-center justify-between p-5 lg:p-6 2xl:p-[30px] bg-[#1A1A1A] border border-[#262626] rounded-xl">
                 <div className="">
@@ -135,7 +135,7 @@ const Home = () => {
             </div>
               <div className="w-full p-5 lg:p-6 2xl:p-[30px] bg-[#1A1A1A] border border-[#262626] mt-4 lg:mt-6 2xl:mt-[30px] rounded-xl">
                 <p className="font-inter text-[#98989A] text-sm lg:text-[16px] 2xl:text-lg mb-1">Average Author Expertise</p>
-                <h3 className=' text-white font-medium font-inter text-[16px] lg:text-lg 2xl:text-xl'>Ebooks are authored by renowned experts with an average of 15 years of experience</h3>
+                <h3 className=' text-white font-medium font-inter text-[16px] lg:text-lg 2xl:text-xl'>Whitepapers are authored by subject matter experts with an average of 20 years of experience.</h3>
               </div>
             </div>
           </div>
