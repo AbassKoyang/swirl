@@ -142,6 +142,27 @@ const Home = () => {
     </section>
     <section className="w-full">
     <SubheadingCon heading="Real Words from Real Readers" text='What our readers have to say' styles='w-full md:w-fit flex items-center justify-center gap-5 2xl:gap-[10px] px-[20px] py-4 2xl:px-[24px] 2xl:py-[18px] mt-[30px] lg:mt-0 bg-[#141414] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:font-medium transition-all duration-200 ease-in-out' buttonText='View All Testimonials' containerStyles="flex-col lg:flex-row justify-between" />
+          <div className="w-full flex  2xl:grid-cols-3 2xl:px-[162px]">
+
+      <div className="2xl:col-span-1 py-10">
+
+        <Testimonial />
+
+      </div>
+
+      <div className="2xl:col-span-1 py-10">
+
+        <Testimonial />
+
+      </div>
+
+      <div className="2xl:col-span-1 py-10">
+
+      ` <Testimonial />
+
+      </div>
+
+    </div>
     </section>
     </section>
   )
