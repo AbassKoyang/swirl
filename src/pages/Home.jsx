@@ -174,16 +174,16 @@ const Home = () => {
       </div>
     </div>
     </section>
-    <section className='w-full 2xl:px-[162px] 2xl:py-[120px] bg-[#1A1A1A]'>
-      <div className="w-full flex items-center 2xl:gap-20">
-        <img src={swirlLogo} alt="Swirl Logo" className="2xl:size-[150px]" />
+    <section className='w-full lg:px-10 2xl:px-[162px] lg:py-20 2xl:py-[120px] bg-[#1A1A1A]'>
+      <div className="w-full flex items-center lg:gap-[60px] 2xl:gap-20">
+        <img src={swirlLogo} alt="Swirl Logo" className="lg:size-[120px] 2xl:size-[150px]" />
         <div className="">
         <span className="font-medium font-inter text-white text-sm lg:text-sm 2xl:text-xl bg-[#333333] py-1 px-2 2xl:py-[6px] 2xl:px-[10px] 2xl:rounded-[4px]">Learn, connect and innovate</span>
         <h2 className="font-kumbh font-medium text-[26px] lg:text-[44px] 2xl:text-[58px] text-white capitalize mt-[10px] 2xl:mt-[16px]">Be Part of the Swirl Revolution</h2>
-        <p className="font-inter 2xl:text-lg 2xl:mt-[30px] text-[#CCCCCC]">Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</p>
+        <p className="font-inter lg:text-[16px] 2xl:text-lg lg:mt-5 2xl:mt-[30px] text-[#CCCCCC] max-w-[850px]">Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</p>
         </div>
       </div>
-      <div className="w-full grid grid-cols-3 bg-[#141414] 2xl:p-5 2xl:gap-5 2xl:rounded-xl 2xl:mt-[100px]">
+      <div className="w-full grid grid-cols-3 bg-[#141414] lg:p-[10px] 2xl:p-5 lg:gap-[10px] 2xl:gap-5 lg:rounded-[10px] 2xl:rounded-xl lg:mt-[50px] 2xl:mt-[100px]">
         <RevolutionCard title="Resource Access" description="Visitors can access a wide range of resources, including ebooks, whitepapers, reports." />
         <RevolutionCard title="Community Forum" description="Join our active community forum to discuss industry trends, share insights, and collaborate with peers." />
         <RevolutionCard title="Tech Events" description="Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge." />
