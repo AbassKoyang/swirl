@@ -144,21 +144,21 @@ const Home = () => {
     </section>
     <section className="w-full">
     <SubheadingCon heading="Real Words from Real Readers" text='What our readers have to say' styles='w-full md:w-fit flex items-center justify-center gap-5 2xl:gap-[10px] px-[20px] py-4 2xl:px-[24px] 2xl:py-[18px] mt-[30px] lg:mt-0 bg-[#141414] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:font-medium transition-all duration-200 ease-in-out' buttonText='View All Testimonials' containerStyles="flex-col lg:flex-row justify-between" />
-    <div className="w-full flex grid-cols-3 lg:px-10 2xl:px-[162px]">
+    <div className="w-full grid grid-cols-3 px-5 lg:px-10 2xl:px-[162px]">
 
-  <div className="2xl:col-span-1 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px]">
-
-        <Testimonial />
-
-      </div>
-
-  <div className="2xl:col-span-1 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-x border-x-[#262626]">
+  <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px]">
 
         <Testimonial />
 
       </div>
 
-  <div className="2xl:col-span-1 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px]">
+  <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-y border-y-[#262626] lg:border-x lg:border-x-[#262626]">
+
+        <Testimonial />
+
+      </div>
+
+  <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px]">
 
        <Testimonial />
 
