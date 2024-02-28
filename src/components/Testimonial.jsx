@@ -1,7 +1,6 @@
-import ProfileImage from '../assets/Profile1.png';
 import Star from '../assets/Shapestar.svg'
 
-const Testimonial = () => {
+const Testimonial = ({testimony, name, profileImage, city}) => {
 
   return (
 
@@ -9,15 +8,15 @@ const Testimonial = () => {
 
         <div className="flex items-center lg:gap-[10px] 2xl:gap-3 mb-4 lg:mb-6 2xl:mb-10">
 
-            <img src={ProfileImage} alt="Testimonial profile" className="rounded-full size-[50px] lg:size-[50px] 2xl:size-[60px]" />
+            <img src={profileImage} alt="Testimonial profile" className="rounded-full size-[50px] lg:size-[50px] 2xl:size-[60px]" />
 
         </div>
 
         <div className=''>
 
-            <h4 className="font-inter font-medium text-white text-lg 2xl:text-xl 2xl:mb-[2px]">Sarah Thompson</h4>
+            <h4 className="font-inter font-medium text-white text-lg 2xl:text-xl 2xl:mb-[2px]">{name}</h4>
 
-            <p className="font-inter font-normal text-[#666666] text-[16px] 2xl:text-lg">San Francisco, USA</p>
+            <p className="font-inter font-normal text-[#666666] text-[16px] 2xl:text-lg">{city}</p>
 
         </div>
 
@@ -31,9 +30,7 @@ const Testimonial = () => {
             </div>
 
             <p className="text-center text-white font-normal text-sm lg:text-[16px] 2xl:text-lg">
-
-            The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated.
-
+                {testimony}
             </p>
 
         </div>

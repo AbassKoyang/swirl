@@ -11,6 +11,11 @@ import usersAvatar from '../assets/usersavatargroup.svg'
 import vrLady from '../assets/vrlady.png'
 import handImage from '../assets/Imagewhitepaper.png'
 import eyeIcon from '../assets/eyeicon.svg'
+import profileImage1 from '../assets/Profile1.png';
+import profileImage2 from '../assets/Profile2.png';
+import profileImage3 from '../assets/Profile3.png';
+import profileImage4 from '../assets/Profile4.png';
+import profileImage5 from '../assets/Profile5.png';
 import Testimonial from "../components/Testimonial";
 
 const Home = () => {
@@ -145,25 +150,26 @@ const Home = () => {
     <section className="w-full">
     <SubheadingCon heading="Real Words from Real Readers" text='What our readers have to say' styles='w-full md:w-fit flex items-center justify-center gap-5 2xl:gap-[10px] px-[20px] py-4 2xl:px-[24px] 2xl:py-[18px] mt-[30px] lg:mt-0 bg-[#141414] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:font-medium transition-all duration-200 ease-in-out' buttonText='View All Testimonials' containerStyles="flex-col lg:flex-row justify-between" />
     <div className="w-full grid grid-cols-3 px-5 lg:px-10 2xl:px-[162px]">
-
-  <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px]">
-
-        <Testimonial />
-
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px]">
+        <Testimonial name="Sarah Thompson" testimony="The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated." city="San Francisco, USA" profileImage={profileImage1} />
       </div>
-
-  <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-y border-y-[#262626] lg:border-x lg:border-x-[#262626]">
-
-        <Testimonial />
-
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-y border-y-[#262626] lg:border-x lg:border-x-[#262626]">
+        <Testimonial name="Raj Patel" testimony="The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions." city="Mumbai, India" profileImage={profileImage2} />
       </div>
-
-  <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px]">
-
-       <Testimonial />
-
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px]">
+        <Testimonial name="Emily Adams" testimony="The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care." city="London, UK" profileImage={profileImage3} />
       </div>
-
+    </div>
+    <div className="w-full grid grid-cols-3 px-5 lg:px-10 2xl:px-[162px]">
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px]">
+        <Testimonial name="Alan Jackson" testimony="The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth." city="Houston, USA" profileImage={profileImage4} />
+      </div>
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-y border-y-[#262626] lg:border-x lg:border-x-[#262626]">
+        <Testimonial name="Jessica Miller" testimony="The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics." city="Boston, USA" profileImage={profileImage5} />
+      </div>
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px]">
+        <Testimonial name="Diego Lopez" testimony="The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability." city="Barcelona, Spain" profileImage={profileImage1} />
+      </div>
     </div>
     </section>
     </section>
