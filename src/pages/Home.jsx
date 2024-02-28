@@ -9,7 +9,9 @@ import LandingPageButton from "../components/LandingPageButton";
 import ebookIcon from '../assets/ebookicon.svg'
 import usersAvatar from '../assets/usersavatargroup.svg'
 import vrLady from '../assets/vrlady.png'
+import handImage from '../assets/Imagewhitepaper.png'
 import eyeIcon from '../assets/eyeicon.svg'
+import Testimonial from "../components/Testimonial";
 
 const Home = () => {
   return (
@@ -116,7 +118,7 @@ const Home = () => {
             Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).
             </p>
             </div>
-            <img src={vrLady} alt="A lady wearing the vison pro" className="w-full h-[169px] lg:h-[332px] 2xl:h-[275px] mb-6 2xl:mb-[30px]" />
+            <img src={handImage} alt="A lady wearing the vison pro" className="w-full h-[169px] lg:h-[332px] 2xl:h-[275px] mb-6 2xl:mb-[30px]" />
             <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-4">
               <div className="w-full lg:w-fit p-5 lg:p-6 2xl:p-[30px] bg-[#1A1A1A] border border-[#262626] rounded-xl">
                 <p className="font-inter text-[#98989A] text-sm lg:text-[16px] 2xl:text-lg mb-[2px] lg:mb-1">Total Whitepapers</p>
@@ -142,23 +144,23 @@ const Home = () => {
     </section>
     <section className="w-full">
     <SubheadingCon heading="Real Words from Real Readers" text='What our readers have to say' styles='w-full md:w-fit flex items-center justify-center gap-5 2xl:gap-[10px] px-[20px] py-4 2xl:px-[24px] 2xl:py-[18px] mt-[30px] lg:mt-0 bg-[#141414] border border-[#262626] rounded-[8px] 2xl:rounded-xl text-[#98989A] font-normal font-inter text-sm 2xl:text-lg z-20 hover:text-white hover:font-medium transition-all duration-200 ease-in-out' buttonText='View All Testimonials' containerStyles="flex-col lg:flex-row justify-between" />
-          <div className="w-full flex  2xl:grid-cols-3 2xl:px-[162px]">
+    <div className="w-full flex grid-cols-3 lg:px-10 2xl:px-[162px]">
 
-      <div className="2xl:col-span-1 py-10">
-
-        <Testimonial />
-
-      </div>
-
-      <div className="2xl:col-span-1 py-10">
+  <div className="2xl:col-span-1 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px]">
 
         <Testimonial />
 
       </div>
 
-      <div className="2xl:col-span-1 py-10">
+  <div className="2xl:col-span-1 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-x border-x-[#262626]">
 
-      ` <Testimonial />
+        <Testimonial />
+
+      </div>
+
+  <div className="2xl:col-span-1 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px]">
+
+       <Testimonial />
 
       </div>
 
