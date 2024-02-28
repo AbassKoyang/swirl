@@ -17,6 +17,8 @@ import profileImage3 from '../assets/Profile3.png';
 import profileImage4 from '../assets/Profile4.png';
 import profileImage5 from '../assets/Profile5.png';
 import Testimonial from "../components/Testimonial";
+import swirlLogo from '../assets/swirl-logo.svg'
+import RevolutionCard from "../components/RevolutionCard";
 
 const Home = () => {
   return (
@@ -153,7 +155,7 @@ const Home = () => {
       <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px]">
         <Testimonial name="Sarah Thompson" testimony="The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated." city="San Francisco, USA" profileImage={profileImage1} />
       </div>
-      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-y border-y-[#262626] lg:border-x lg:border-x-[#262626]">
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-y border-y-[#262626] lg:border-y-0 lg:border-x lg:border-x-[#262626]">
         <Testimonial name="Raj Patel" testimony="The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions." city="Mumbai, India" profileImage={profileImage2} />
       </div>
       <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px]">
@@ -161,16 +163,31 @@ const Home = () => {
       </div>
     </div>
     <div className="w-full grid grid-cols-3 px-5 lg:px-10 2xl:px-[162px]">
-      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px]">
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pr-10 2xl:pr-[50px] lg:border-t border-t-[#262626]">
         <Testimonial name="Alan Jackson" testimony="The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth." city="Houston, USA" profileImage={profileImage4} />
       </div>
-      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-y border-y-[#262626] lg:border-x lg:border-x-[#262626]">
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:px-10 2xl:px-[50px] border-y border-y-[#262626] lg:border-y-0 lg:border-t lg:border-x lg:border-x-[#262626]">
         <Testimonial name="Jessica Miller" testimony="The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics." city="Boston, USA" profileImage={profileImage5} />
       </div>
-      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px]">
+      <div className="col-span-3 lg:col-span-1 py-10 lg:py-[60px] 2xl:py-20 lg:pl-10 2xl:pl-[50px] lg:border-t border-t-[#262626]">
         <Testimonial name="Diego Lopez" testimony="The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability." city="Barcelona, Spain" profileImage={profileImage1} />
       </div>
     </div>
+    </section>
+    <section className='w-full 2xl:px-[162px] 2xl:py-[120px] bg-[#1A1A1A]'>
+      <div className="w-full flex items-center 2xl:gap-20">
+        <img src={swirlLogo} alt="Swirl Logo" className="2xl:size-[150px]" />
+        <div className="">
+        <span className="font-medium font-inter text-white text-sm lg:text-sm 2xl:text-xl bg-[#333333] py-1 px-2 2xl:py-[6px] 2xl:px-[10px] 2xl:rounded-[4px]">Learn, connect and innovate</span>
+        <h2 className="font-kumbh font-medium text-[26px] lg:text-[44px] 2xl:text-[58px] text-white capitalize mt-[10px] 2xl:mt-[16px]">Be Part of the Swirl Revolution</h2>
+        <p className="font-inter 2xl:text-lg 2xl:mt-[30px] text-[#CCCCCC]">Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</p>
+        </div>
+      </div>
+      <div className="w-full grid grid-cols-3 bg-[#141414] 2xl:p-5 2xl:gap-5 2xl:rounded-xl 2xl:mt-[100px]">
+        <RevolutionCard title="Resource Access" description="Visitors can access a wide range of resources, including ebooks, whitepapers, reports." />
+        <RevolutionCard title="Community Forum" description="Join our active community forum to discuss industry trends, share insights, and collaborate with peers." />
+        <RevolutionCard title="Tech Events" description="Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge." />
+      </div>
     </section>
     </section>
   )
