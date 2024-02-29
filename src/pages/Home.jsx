@@ -19,6 +19,7 @@ import profileImage5 from '../assets/Profile5.png';
 import Testimonial from "../components/Testimonial";
 import swirlLogo from '../assets/swirl-logo.svg'
 import RevolutionCard from "../components/RevolutionCard";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -191,6 +192,7 @@ const Home = () => {
         <RevolutionCard title="Tech Events" description="Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge." />
       </div>
     </section>
+    <Footer />
     </section>
   )
 }
