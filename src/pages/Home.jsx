@@ -184,7 +184,7 @@ const Home = () => {
         <p className="hidden lg:flex font-inter lg:text-[16px] 2xl:text-lg lg:mt-5 2xl:mt-[30px] text-[#CCCCCC] max-w-[850px]">Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</p>
         </div>
       </div>
-        <h2 className="font-kumbh font-medium text-[26px] lg:text-[44px] 2xl:text-[58px] text-white capitalize mt-[10px] 2xl:mt-[16px]">Be Part of the Swirl Revolution</h2>
+        <h2 className="lg:hidden font-kumbh font-medium text-[26px] lg:text-[44px] 2xl:text-[58px] text-white capitalize mt-[10px] 2xl:mt-[16px]">Be Part of the Swirl Revolution</h2>
         <p className="lg:hidden font-inter text-sm text-[#CCCCCC] mt-1 max-w-[850px]">Immerse yourself in the world of future technology. Explore our comprehensive resources.</p>
       <div className="w-full grid grid-cols-3 bg-[#141414] p-[10px] 2xl:p-5 gap-[10px] 2xl:gap-5 rounded-[10px] 2xl:rounded-xl mt-10 lg:mt-[50px] 2xl:mt-[100px]">
         <RevolutionCard title="Resource Access" description="Visitors can access a wide range of resources, including ebooks, whitepapers, reports." />
