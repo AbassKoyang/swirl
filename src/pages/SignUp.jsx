@@ -9,15 +9,19 @@ import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [steps, setSteps] = useState(0);
-  const [email, setEmail] = useState(null);
-  const { watch, register, handleSubmit, setValue, formState: {errors, isValid}} = useForm();
+  const [user, setUser] = useState(
+    {email: '',
+    password: '',
+    fullname: '',
+    username: '',
+});
+  const { watch, register, handleSubmit, formState: {errors, isValid}} = useForm();
 
 
-  const handleEmailButtonSubmit = (e) => {
-    e.preventDefault();
-    handleSubmit(onsubmit)("email");
+  const onSubmit = (data) => {
+    console.log(data);
+    setUser((prev)=>({...prev, ...data}));
     setSteps((prev) => prev + 1);
-
   }
 
 
@@ -36,14 +40,13 @@ const SignUp = () => {
           <span className="font-medium text-lg text-white/35">or</span>
           <div className="w-[40%] h-[1px] bg-white/35"></div>
         </div>
-        <form onSubmit={handleEmailButtonSubmit}  className="w-full flex items-center justify-between bg-black/95 rounded-sm p-2 focus-within:outline focus-within:outline-1 focus-within:outline-white/35 overflow-hidden outline-offset-[2px]">
+        <form onSubmit={handleSubmit(onSubmit)}  className="w-full flex items-center justify-between bg-black/95 rounded-sm p-2 focus-within:outline focus-within:outline-1 focus-within:outline-white/35 overflow-hidden outline-offset-[2px]">
           <input 
             type="email" 
             name="email" 
             id="email-id" 
             placeholder="Email Address" 
             className="w-full bg-black/95 rounded-sm p-1.5 text-sm text-white/85 border-0 outline-0 mr-2"
-            onChange={(e) => {setEmail(e.target.value), setValue('email', e.target.value)}}
             {...register('email', {
               required: {
                 value: true,
@@ -59,11 +62,10 @@ const SignUp = () => {
             disabled={!isValid} 
             type="button" 
             className="disabled:bg-white/70 p-1.5 rounded-sm  bg-[#FFD11A] group" 
-            onClick={handleEmailButtonSubmit}><FaChevronRight className="size-4 group-disabled:text-gray-500 text-white"/>
+            onClick={handleSubmit(onSubmit)}><FaChevronRight className="size-4 group-disabled:text-gray-500 text-white"/>
           </button>
         </form>
         {errors?.email?.message && <p className="text-xs text-red-600 mt-2">{errors.email.message}</p>}
-        <p>{email} email</p>
         <p className="text-xs text-[#98989A] text-center mt-2">By signing up I accept the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Terms of Service</Link> and the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Privacy Policy</Link>.</p>
         <div className="w-full h-[1px] bg-white/35 mt-9 mb-3" />
         <p className="text-sm text-[#98989A] text-center">Already using swirl? <Link className="font-medium underline hover:text-[#FFD11A]">Log in</Link></p>
@@ -76,7 +78,7 @@ const SignUp = () => {
             type="email"
             name="email-filled"
             placeholder="Email Address" 
-            value={email}
+            value={user.email}
             readOnly
             className="w-full bg-black/95 rounded-sm p-1.5 text-sm text-white/90 border-0 outline-0 mx-2"
              />
@@ -84,7 +86,6 @@ const SignUp = () => {
           </div>
         </form>
         <button onClick={() => setSteps((prev) => prev - 1)}>prev</button>
-        <p>{email}</p>
       </div>
     </secion>
   )
