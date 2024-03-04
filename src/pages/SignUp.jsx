@@ -2,9 +2,10 @@ import SignUpButton from "../components/SignUpButton";
 import { FcGoogle } from "react-icons/fc";
 import { FaChevronRight, FaDiscord, FaGithub } from "react-icons/fa";
 import { LuCheck, LuMail } from "react-icons/lu";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import FormStepTwo from "../components/FormStepTwo";
 
 
 const SignUp = () => {
@@ -26,7 +27,7 @@ const SignUp = () => {
 
 
   return (
-    <secion className="px-5 w-full bg-[#141414] flex flex-col justify-center items-center h-screen">
+    <section className="px-5 w-full bg-[#141414] flex flex-col justify-center items-center h-screen">
       <h1 className="text-2xl font-bold font-kumbh text-white">Sign Up</h1>
       <div className={`w-full max-w-72 flex-col ${steps === 0 ? 'flex' : 'hidden'}`}>
       <p className="text-sm text-[#e9e9ef] font-normal max-w-sm my-5 text-center">Once you sign up, your personal feed will be ready to explore.</p>
@@ -70,24 +71,9 @@ const SignUp = () => {
         <div className="w-full h-[1px] bg-white/35 mt-9 mb-3" />
         <p className="text-sm text-[#98989A] text-center">Already using swirl? <Link className="font-medium underline hover:text-[#FFD11A]">Log in</Link></p>
       </div>
-      <div className={`w-full max-w-xs flex-col mt-5 ${steps === 1 ? 'flex' : 'hidden'}`}>
-        <form action="">
-          <div className="w-full flex items-center p-2 bg-black/95 rounded-sm focus-within:outline focus-within:outline-1 focus-within:outline-white/35">
-            <LuMail className="text-white size-7"/>
-            <input 
-            type="email"
-            name="email-filled"
-            placeholder="Email Address" 
-            value={user.email}
-            readOnly
-            className="w-full bg-black/95 rounded-sm p-1.5 text-sm text-white/90 border-0 outline-0 mx-2"
-             />
-             <LuCheck className="text-green-500 size-5" />
-          </div>
-        </form>
-        <button onClick={() => setSteps((prev) => prev - 1)}>prev</button>
-      </div>
-    </secion>
+
+      {steps > 0 && <FormStepTwo user={user} steps={steps} setUser={setUser} />}
+    </section>
   )
 }
 
