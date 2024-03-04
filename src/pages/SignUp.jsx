@@ -28,9 +28,9 @@ const SignUp = () => {
 
   return (
     <section className="px-5 w-full bg-[#141414] flex flex-col justify-center items-center h-screen">
-      <h1 className="text-2xl font-bold font-kumbh text-white">Sign Up</h1>
-      <div className={`w-full max-w-72 flex-col ${steps === 0 ? 'flex' : 'hidden'}`}>
-      <p className="text-sm text-[#e9e9ef] font-normal max-w-sm my-5 text-center">Once you sign up, your personal feed will be ready to explore.</p>
+      <h1 className="text-2xl 2xl:text-3xl font-bold font-kumbh text-white">Sign Up</h1>
+      <div className={`w-full max-w-72 2xl:max-w-sm flex-col ${steps === 0 ? 'flex' : 'hidden'}`}>
+      <p className="text-sm 2xl:text-[16px] text-[#e9e9ef] font-normal max-w-full  my-5 text-center">Once you sign up, your personal feed will be ready to explore.</p>
         <div className="w-full flex flex-col gap-2">
         <SignUpButton text='Google' icon={<FcGoogle className="size-6" />} />
         <SignUpButton text='Github' icon={<FaGithub className="size-6" />} />
@@ -41,13 +41,13 @@ const SignUp = () => {
           <span className="font-medium text-lg text-white/35">or</span>
           <div className="w-[40%] h-[1px] bg-white/35"></div>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)}  className="w-full flex items-center justify-between bg-black/95 rounded-sm p-2 focus-within:outline focus-within:outline-1 focus-within:outline-white/35 overflow-hidden outline-offset-[2px]">
+        <form onSubmit={handleSubmit(onSubmit)}  className="w-full flex items-center justify-between bg-black/95 rounded-sm 2xl:rounded-md p-2 focus-within:outline focus-within:outline-1 focus-within:outline-white/35 overflow-hidden outline-offset-[2px]">
           <input 
             type="email" 
             name="email" 
             id="email-id" 
             placeholder="Email Address" 
-            className="w-full bg-black/95 rounded-sm p-1.5 text-sm text-white/85 border-0 outline-0 mr-2"
+            className="w-full bg-black/95 rounded-sm 2xl:rounded-md p-1.5 2xl:p-2 text-sm 2xl:text-[16px] text-white/85 border-0 outline-0 mr-2"
             {...register('email', {
               required: {
                 value: true,
@@ -62,14 +62,14 @@ const SignUp = () => {
           <button 
             disabled={!isValid} 
             type="button" 
-            className="disabled:bg-white/70 p-1.5 rounded-sm  bg-[#FFD11A] group" 
+            className="disabled:bg-white/70 p-1.5 2xl:p-2 rounded-sm 2xl:rounded-md  bg-[#FFD11A] group" 
             onClick={handleSubmit(onSubmit)}><FaChevronRight className="size-4 group-disabled:text-gray-500 text-white"/>
           </button>
         </form>
         {errors?.email?.message && <p className="text-xs text-red-600 mt-2">{errors.email.message}</p>}
-        <p className="text-xs text-[#98989A] text-center mt-2">By signing up I accept the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Terms of Service</Link> and the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Privacy Policy</Link>.</p>
+        <p className="text-xs 2xl:text-sm text-[#98989A] text-center mt-2">By signing up I accept the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Terms of Service</Link> and the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Privacy Policy</Link>.</p>
         <div className="w-full h-[1px] bg-white/35 mt-9 mb-3" />
-        <p className="text-sm text-[#98989A] text-center">Already using swirl? <Link className="font-medium underline hover:text-[#FFD11A]">Log in</Link></p>
+        <p className="text-sm 2xl:text-sm text-[#98989A] text-center">Already using swirl? <Link className="font-medium underline hover:text-[#FFD11A]">Log in</Link></p>
       </div>
 
       {steps > 0 && <FormStepTwo user={user} steps={steps} setUser={setUser} />}

@@ -16,9 +16,9 @@ const FormStepTwo = ({steps, user, setUser}) => {
             console.log(data);
     }
   return (
-    <div className={`w-full max-w-xs flex-col mt-5 ${steps === 1 ? 'flex' : 'hidden'}`}>
+    <div className={`w-full max-w-xs 2xl:max-w-sm flex-col mt-5 ${steps === 1 ? 'flex' : 'hidden'}`}>
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="w-full flex items-center p-2 bg-black/95 rounded-sm focus-within:outline focus-within:outline-1 focus-within:outline-[#2cdce6] my-4">
+      <div className="w-full flex items-center p-2 bg-black/95 rounded-sm 2xl:rounded-md focus-within:outline focus-within:outline-1 focus-within:outline-[#2cdce6] my-4">
         <LuMail className="text-white size-6"/>
         <input 
         type="email"
@@ -26,19 +26,19 @@ const FormStepTwo = ({steps, user, setUser}) => {
         placeholder="Email Address" 
         value={user.email}
         readOnly
-        className="w-full bg-black/95 rounded-sm p-1.5 text-sm text-white/90 border-0 outline-0 mx-2"
+        className="w-full bg-black/95 rounded-sm 2xl:rounded-md p-1.5 2xl:p-2 text-sm 2xl:text-[16px] text-white/90 border-0 outline-0 mx-2"
         {...register('email',
         )}
          />
          <LuCheck className="text-green-500 size-5" />
       </div>
-      <div className="w-full flex items-center p-2 bg-black/95 rounded-sm focus-within:outline focus-within:outline-1 focus-within:outline-[#2cdce6] my-4">
+      <div className="w-full flex items-center p-2 bg-black/95 rounded-sm 2xl:rounded-md focus-within:outline focus-within:outline-1 focus-within:outline-[#2cdce6] my-4">
         <LuLock className="text-white size-6"/>
         <input 
         type={isPasswordVisible ? 'text' : 'password'}
         name="password"
         placeholder="Enter password" 
-        className="w-full bg-black/95 rounded-sm p-1.5 text-sm text-white/90 border-0 outline-0 mx-2"
+        className="w-full bg-black/95 rounded-sm 2xl:rounded-md p-1.5 2xl:p-2 text-sm 2xl:text-[16px] text-white/90 border-0 outline-0 mx-2"
         {...register('password', 
         {
           required: {
@@ -55,13 +55,13 @@ const FormStepTwo = ({steps, user, setUser}) => {
          <button type="button" onClick={togglePasswordVisibility} className="p-0 bg-transparent border-0 outline-0">{isPasswordVisible ? (<LuEyeOff className="size-4 text-white" />) : (<LuEye className="size-4 text-white" />)}</button>
       </div>
       {errors?.password && <p className="text-xs text-red-600 mt-2">{errors.password.message}</p>}
-      <div className="w-full flex items-center p-2 bg-black/95 rounded-sm focus-within:outline focus-within:outline-1 focus-within:outline-white/75 my-4">
+      <div className="w-full flex items-center p-2 bg-black/95 rounded-sm 2xl:rounded-md focus-within:outline focus-within:outline-1 focus-within:outline-white/75 my-4">
         <LuUser className="text-white size-6"/>
         <input 
         type="text"
         name="username"
         placeholder="Enter fullname" 
-        className="w-full bg-black/95 rounded-sm p-1.5 text-sm text-white/90 border-0 outline-0 mx-2"
+        className="w-full bg-black/95 rounded-sm 2xl:rounded-md p-1.5 2xl:p-2 text-sm 2xl:text-[16px] text-white/90 border-0 outline-0 mx-2"
          {...register('fullname', {
           required: {
             value: true,
@@ -72,13 +72,13 @@ const FormStepTwo = ({steps, user, setUser}) => {
          />
       </div>
       {errors?.fullname?.message && <p className="text-xs text-red-600 mt-2">{errors.fullname.message}</p>}
-      <div className="w-full flex items-center p-2 bg-black/95 rounded-sm focus-within:outline focus-within:outline-1 focus-within:outline-white/75 my-4">
+      <div className="w-full flex items-center p-2 bg-black/95 rounded-sm 2xl:rounded-md focus-within:outline focus-within:outline-1 focus-within:outline-white/75 my-4">
         <HiAtSymbol  className="text-white size-6"/>
         <input 
         type="text"
         name="username"
         placeholder="Enter username" 
-        className="w-full bg-black/95 rounded-sm p-1.5 text-sm text-white/90 border-0 outline-0 mx-2"
+        className="w-full bg-black/95 rounded-sm 2xl:rounded-md p-1.5 2xl:p-2 text-sm 2xl:text-[16px] text-white/90 border-0 outline-0 mx-2"
          {...register('username', 
         {
           required: {
