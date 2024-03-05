@@ -3,6 +3,7 @@ import { LuCheck, LuEye, LuEyeOff, LuLock, LuMail, LuUser } from "react-icons/lu
 import { HiAtSymbol } from "react-icons/hi";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import supabase from "../../config/supabase";
 
 const FormStepTwo = ({steps, user, setUser}) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -11,10 +12,25 @@ const FormStepTwo = ({steps, user, setUser}) => {
     const togglePasswordVisibility = () => {
         setIsPasswordVisible(!isPasswordVisible);
     }
-    const onSubmit = async (data)=> {
-      await  setUser(data);
-            console.log(data);
+    const onSubmit = (data)=> {
+      setUser(data);  
+      console.log(data);
+      signUpNewUser(data);
     }
+     const signUpNewUser = async (user) => {
+        try {
+            const { data, error } = await supabase.auth.signUp({
+                email: 'medbotixinc@gmail.com',
+                password: 'Medbotojkncs7',
+                options: {
+                  emailRedirectTo: 'http://localhost:5173/feed',
+                },
+              })
+              console.log(data, error)
+        } catch (error) {
+            console.log(error)
+        }
+      }
   return (
     <div className={`w-full max-w-xs 2xl:max-w-sm flex-col mt-5 ${steps === 1 ? 'flex' : 'hidden'}`}>
     <form onSubmit={handleSubmit(onSubmit)}>

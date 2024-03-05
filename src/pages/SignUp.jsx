@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import FormStepTwo from "../components/FormStepTwo";
+import supabase from "../../config/supabase";
 
 
 const SignUp = () => {
@@ -26,14 +27,38 @@ const SignUp = () => {
   }
 
 
+  const signInWithGoogle = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+       provider: 'google',
+     })
+     console.log('clicked', data)
+    } catch (error) {
+     console.log(error)
+    }
+   }
+   
+  const signInWithGithub = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'github',
+      })
+     console.log('clicked github', data)
+    } catch (error) {
+     console.log(error)
+    }
+   }
+
+  
+
   return (
     <section className="px-5 w-full bg-[#141414] flex flex-col justify-center items-center h-screen">
       <h1 className="text-2xl 2xl:text-3xl font-bold font-kumbh text-white">Sign Up</h1>
       <div className={`w-full max-w-72 2xl:max-w-sm flex-col ${steps === 0 ? 'flex' : 'hidden'}`}>
       <p className="text-sm 2xl:text-[16px] text-[#e9e9ef] font-normal max-w-full  my-5 text-center">Once you sign up, your personal feed will be ready to explore.</p>
         <div className="w-full flex flex-col gap-2">
-        <SignUpButton text='Google' icon={<FcGoogle className="size-6" />} />
-        <SignUpButton text='Github' icon={<FaGithub className="size-6" />} />
+        <SignUpButton text='Google' icon={<FcGoogle className="size-6" />} signin={signInWithGoogle} />
+        <SignUpButton text='Github' icon={<FaGithub className="size-6" />} signin={signInWithGithub}/>
         <SignUpButton text='Discord' icon={<FaDiscord className="size-6" />} />
         </div>
         <div className="w-full flex items-center justify-between my-4">

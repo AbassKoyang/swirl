@@ -9,6 +9,7 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="onboarding/signup" element={<SignUp />} />
+        <Route path="feed" element={<Home />} />
       </Route>
     )
   )
