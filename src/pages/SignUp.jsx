@@ -1,6 +1,6 @@
 import SignUpButton from "../components/SignUpButton";
 import { FcGoogle } from "react-icons/fc";
-import { FaChevronRight, FaDiscord, FaGithub } from "react-icons/fa";
+import { FaChevronRight, FaFigma, FaGithub } from "react-icons/fa";
 import { LuCheck, LuMail } from "react-icons/lu";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -37,13 +37,24 @@ const SignUp = () => {
      console.log(error)
     }
    }
-   
+
   const signInWithGithub = async () => {
     try {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'github',
       })
      console.log('clicked github', data)
+    } catch (error) {
+     console.log(error)
+    }
+   }
+
+  const signInWithFigma = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'figma',
+      })
+     console.log('clicked figma', data)
     } catch (error) {
      console.log(error)
     }
@@ -57,9 +68,9 @@ const SignUp = () => {
       <div className={`w-full max-w-72 2xl:max-w-sm flex-col ${steps === 0 ? 'flex' : 'hidden'}`}>
       <p className="text-sm 2xl:text-[16px] text-[#e9e9ef] font-normal max-w-full  my-5 text-center">Once you sign up, your personal feed will be ready to explore.</p>
         <div className="w-full flex flex-col gap-2">
-        <SignUpButton text='Google' icon={<FcGoogle className="size-6" />} signin={signInWithGoogle} />
+        <SignUpButton text='Google' icon={<FcGoogle className="size-6"/>}  signin={signInWithGoogle} />
         <SignUpButton text='Github' icon={<FaGithub className="size-6" />} signin={signInWithGithub}/>
-        <SignUpButton text='Discord' icon={<FaDiscord className="size-6" />} />
+        <SignUpButton text='Figma' icon={<FaFigma className="size-6" />} signin={signInWithFigma}/>
         </div>
         <div className="w-full flex items-center justify-between my-4">
           <div className="w-[40%] h-[1px] bg-white/35"></div>

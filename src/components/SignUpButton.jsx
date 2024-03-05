@@ -1,5 +1,3 @@
-import supabase from "../../config/supabase"
-
 
 const SignUpButton = ({text, icon, signin}) => {
 
