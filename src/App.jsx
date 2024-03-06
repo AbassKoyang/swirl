@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import RootLayout from "./layouts/RootLayout"
 import Home from "./pages/Home"
 import SignUp from "./pages/SignUp"
+import Login from "./pages/Login"
 
 function App() {
   const router =  createBrowserRouter(
@@ -9,6 +10,7 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="onboarding/signup" element={<SignUp />} />
+        <Route path="onboarding/login" element={<Login />} />
         <Route path="feed" element={<Home />} />
       </Route>
     )
