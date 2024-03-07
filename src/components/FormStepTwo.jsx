@@ -1,36 +1,71 @@
-import SignUpButton from "../components/SignUpButton";
 import { LuCheck, LuEye, LuEyeOff, LuLock, LuMail, LuUser } from "react-icons/lu";
 import { HiAtSymbol } from "react-icons/hi";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import supabase from "../../config/supabase";
+import { ImSpinner6 } from "react-icons/im";
 
 const FormStepTwo = ({steps, user, setUser}) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-    const { watch, register, handleSubmit, formState: {errors, isValid}} = useForm();
+    const [errorMessage, setErrorMessage] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const {register, handleSubmit, formState: {errors, isValid}} = useForm();
 
     const togglePasswordVisibility = () => {
         setIsPasswordVisible(!isPasswordVisible);
     }
-    const onSubmit = (data)=> {
+    const onSubmit = async (data)=> {
       setUser(data);  
       console.log(data);
-      signUpNewUser(data);
-    }
-     const signUpNewUser = async (user) => {
-        try {
-            const { data, error } = await supabase.auth.signUp({
-                email: 'medbotixinc@gmail.com',
-                password: 'Medbotojkncs7',
+      try {
+        setIsLoading(true);
+        const { data: SignUpResponse, error } = await supabase.auth.signUp({
+          email: data.email,
+                password: data.password,
                 options: {
                   emailRedirectTo: 'http://localhost:5173/feed',
-                },
-              })
-              console.log(data, error)
-        } catch (error) {
-            console.log(error)
+                  data:{
+                            "screen_name": data.fullname,
+                            "username": data.username,
+                            "can_dm": null,
+                            "can_media_tag": null,
+                            "bio": "",
+                            "contact": "",
+                            "website": "",
+                            "socials": [
+                              {
+                                "name": "", 
+                                "link":"",
+                                "icon":"",
+                            }
+                            ],
+                            "favourites_count": 0,
+                            "followers_count": 0,
+                            "friends_count": 0,
+                            "bookmarks_count": 0,
+                            "posts_count": 0,
+                            "comments_count": 0,
+                            "location": "",
+                            "media_count": 0,
+                            "profile_banner_url": "",
+                            "profile_image_url": "",
+                            "company": "",
+                            "job_title": ""
+                          }},
+        });
+        if(!error){
+          console.log("SignUp successful:", SignUpResponse);
         }
+        if(error){
+          setErrorMessage(error.message || null);
+        }
+      } catch (error) {
+        console.error("Login error:", error);
+      } finally {
+        setIsLoading(false);
       }
+    }
+
   return (
     <div className={`w-full max-w-xs 2xl:max-w-sm flex-col mt-5 ${steps === 1 ? 'flex' : 'hidden'}`}>
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -75,7 +110,7 @@ const FormStepTwo = ({steps, user, setUser}) => {
         <LuUser className="text-white size-6"/>
         <input 
         type="text"
-        name="username"
+        name="fullname"
         placeholder="Enter fullname" 
         className="w-full bg-black/95 rounded-sm 2xl:rounded-md p-1.5 2xl:p-2 text-sm 2xl:text-[16px] text-white/90 border-0 outline-0 mx-2"
          {...register('fullname', {
@@ -106,9 +141,11 @@ const FormStepTwo = ({steps, user, setUser}) => {
          />
       </div>
       {errors?.username?.message && <p className="text-xs text-red-600 mt-2">{errors.username.message}</p>}
-      <button disabled={!isValid} onClick={handleSubmit(onSubmit)} className="w-full flex items-center justify-center px-5 py-2.5 mt-7 disabled:bg-white/35  disabled:text-gray-400 disabled:hover:text-gray-400 disabled:cursor-not-allowed bg-white hover:bg-[#FFD11A] rounded-sm text-black hover:text-white text-[16px] font-bold transition-all duration-200 ease-in-out">
-        <p>Sign Up</p>
-    </button>
+      <button onClick={handleSubmit(onSubmit)} disabled={!isValid} className="w-full flex items-center justify-center gap-3 px-5 py-2.5 disabled:bg-white/35  disabled:text-gray-400 disabled:cursor-not-allowed bg-white hover:bg-[#FFD11A] rounded-sm text-black hover:text-white text-sm font-bold transition-all duration-200 ease-in-out">
+                <p>Sign In</p>
+                {isLoading && <ImSpinner6 className="size-5 animate-spin" />}
+            </button>
+            <p className="text-xs text-left text-red-600 mt-2">{errorMessage}</p>
     </form>
   </div>
   )

@@ -11,6 +11,7 @@ import supabase from "../../config/supabase";
 
 const SignUp = () => {
   const [steps, setSteps] = useState(0);
+  const [signupError, setSignupError] = useState(null)
   const [user, setUser] = useState(
     {email: '',
     password: '',
@@ -27,38 +28,49 @@ const SignUp = () => {
   }
 
 
-  const signInWithGoogle = async () => {
+  const signInWithOAuth = async (provider) => {
     try {
       const { data, error } = await supabase.auth.signInWithOAuth({
-       provider: 'google',
-     })
-     console.log('clicked', data)
+        provider,
+        data:{
+          "screen_name": "",
+          "username": "",
+          "can_dm": null,
+          "can_media_tag": null,
+          "bio": "",
+          "contact": "",
+          "website": "",
+          "socials": [
+            {
+              "name": "", 
+              "link":"",
+              "icon":"",
+          }
+          ],
+          "favourites_count": 0,
+          "followers_count": 0,
+          "friends_count": 0,
+          "bookmarks_count": 0,
+          "posts_count": 0,
+          "comments_count": 0,
+          "location": "",
+          "media_count": 0,
+          "profile_banner_url": "",
+          "profile_image_url": "",
+          "company": "",
+          "job_title": ""
+        }
+      });
+      if (error) {
+        setSignupError(error.message);
+        throw error;
+      }else{
+        console.log("OAuth login successful:", data);
+      }
     } catch (error) {
-     console.log(error)
+      console.error("OAuth login error:", error);
     }
-   }
-
-  const signInWithGithub = async () => {
-    try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'github',
-      })
-     console.log('clicked github', data)
-    } catch (error) {
-     console.log(error)
-    }
-   }
-
-  const signInWithFigma = async () => {
-    try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'figma',
-      })
-     console.log('clicked figma', data)
-    } catch (error) {
-     console.log(error)
-    }
-   }
+  };
 
   
 
@@ -68,9 +80,9 @@ const SignUp = () => {
       <div className={`w-full max-w-72 2xl:max-w-sm flex-col ${steps === 0 ? 'flex' : 'hidden'}`}>
       <p className="text-sm 2xl:text-[16px] text-[#e9e9ef] font-normal max-w-full  my-5 text-center">Once you sign up, your personal feed will be ready to explore.</p>
         <div className="w-full flex flex-col gap-2">
-        <SignUpButton text='Google' icon={<FcGoogle className="size-6"/>}  signin={signInWithGoogle} />
-        <SignUpButton text='Github' icon={<FaGithub className="size-6" />} signin={signInWithGithub}/>
-        <SignUpButton text='Figma' icon={<FaFigma className="size-6" />} signin={signInWithFigma}/>
+        <SignUpButton text='Google' icon={<FcGoogle className="size-6"/>}  signin={() => signInWithOAuth('google')} />
+        <SignUpButton text='Github' icon={<FaGithub className="size-6" />} signin={() => signInWithOAuth('github')}/>
+        <SignUpButton text='Figma' icon={<FaFigma className="size-6" />} signin={() => signInWithOAuth('figma')}/>
         </div>
         <div className="w-full flex items-center justify-between my-4">
           <div className="w-[40%] h-[1px] bg-white/35"></div>
@@ -103,6 +115,7 @@ const SignUp = () => {
           </button>
         </form>
         {errors?.email?.message && <p className="text-xs text-red-600 mt-2">{errors.email.message}</p>}
+        {signupError && <p className="text-xs text-red-600 mt-2">{signupError}</p>}
         <p className="text-xs 2xl:text-sm text-[#98989A] text-center mt-2">By signing up I accept the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Terms of Service</Link> and the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Privacy Policy</Link>.</p>
         <div className="w-full h-[1px] bg-white/35 mt-9 mb-3" />
         <p className="text-sm 2xl:text-sm text-[#98989A] text-center">Already using swirl? <Link className="font-medium underline hover:text-[#FFD11A]">Log in</Link></p>
