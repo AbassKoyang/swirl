@@ -122,6 +122,7 @@ const Login = () => {
             </button>
             <p className="text-xs text-left text-red-600 mt-2">{errorMessage}</p>
         </form>
+        <p className="text-sm 2xl:text-sm text-[#98989A] text-center mt-3">Forgotten password? <Link to='/onboarding/forgot-password' className="font-medium underline hover:text-[#FFD11A]">Reset here</Link></p>
         <div className="w-full h-[1px] bg-white/35 mt-9 mb-3" />
         <p className="text-sm 2xl:text-sm text-[#98989A] text-center">Don't have an account? <Link to='/onboarding/signup' className="font-medium underline hover:text-[#FFD11A]">Sign Up</Link></p>
       </div>
