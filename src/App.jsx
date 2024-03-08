@@ -5,6 +5,10 @@ import SignUp from "./pages/SignUp"
 import Login from "./pages/Login"
 import ForgotPasswordPage from "./pages/ForgotPasswordPage"
 import UpdatePassword from "./pages/UpdatePassword"
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 function App() {
   const router =  createBrowserRouter(
@@ -20,8 +24,12 @@ function App() {
     )
   )
 
+  const queryClient = new QueryClient()
+
   return (
+    <QueryClientProvider client={queryClient} >
     <RouterProvider router={router} />
+    </QueryClientProvider>
   )
 }
 

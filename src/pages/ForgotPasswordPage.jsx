@@ -13,28 +13,47 @@ const ForgotPasswordPage = () => {
     const [errorMessage, setErrorMessage] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
+
+    const checkUserExistence = async (data) => {
+        const {data: user, error: userCheckError} = await supabase.auth.getUserByEmail(data.email)
+            if(userCheckError){
+                setErrorMessage('Error checking user existence')
+                return false
+            }
+            if(user){
+                return true
+            } else {
+                return false
+            }
+         }
+    }
+
     const onSubmit = async (data) => {
-        setIsLoading(true);
-        try {
-          const { data: passwordResetResponse, error } = await supabase.auth.resetPasswordForEmail( data.email, {
-            redirectTo: 'http://localhost:5173/update-password',
-          });
-          if(!error){
-            console.log("Resent link sent successfully:", passwordResetResponse);
-          }
-          if(error){
-            setErrorMessage(error.message || null);
-          }
-        } catch (error) {
-          console.error("Password reset error:", error);
-        } finally {
-          setIsLoading(false);
-        }
-      };
+        if(await checkUserExistence(data)) {
+            setIsLoading(true);
+            try {
+                const { data: passwordResetResponse, error } = await supabase.auth.resetPasswordForEmail( data.email, {
+                  redirectTo: 'http://localhost:5173/onboarding/update-password',
+                });
+                if(!error){
+                  console.log("Reset link sent successfully:", passwordResetResponse);
+                }
+                if(error){
+                  setErrorMessage(error.message || null);
+                }
+              } catch (error) {
+                console.error("Password reset error:", error);
+              } finally {
+                setIsLoading(false);
+                setTimeout(() => {
+                  setErrorMessage(null);
+                }, 2000);
+            }
+      }}
 
   return (
     <section className="">
-        <h1 className="text-2xl 2xl:text-3xl font-bold font-kumbh text-white">
+        <h1 className="text-2xl 2xl:text-3xl font-bold font-kumbh text-white text-center">
             Reset Password
         </h1>
         <div className={`w-full max-w-72 2xl:max-w-sm flex-col flex`}>
@@ -65,7 +84,7 @@ const ForgotPasswordPage = () => {
           </div>
 
             <button onClick={handleSubmit(onSubmit)} disabled={!isValid} className="w-full flex items-center justify-center gap-3 px-5 py-2.5 disabled:bg-white/35  disabled:text-gray-400 disabled:cursor-not-allowed bg-white hover:bg-[#FFD11A] rounded-sm text-black hover:text-white text-sm font-bold transition-all duration-200 ease-in-out">
-                <p>Sign In</p>
+                <p>Request reset link</p>
                 {isLoading && <ImSpinner6 className="size-5 animate-spin" />}
             </button>
             <p className="text-xs text-left text-red-600 mt-2">{errorMessage}</p>
@@ -74,5 +93,4 @@ const ForgotPasswordPage = () => {
     </section>
   )
 }
-
 export default ForgotPasswordPage
