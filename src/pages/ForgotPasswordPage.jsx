@@ -25,8 +25,8 @@ const ForgotPasswordPage = () => {
             } else {
                 return false
             }
-         }
-    }
+        }
+
 
     const onSubmit = async (data) => {
         if(await checkUserExistence(data)) {
