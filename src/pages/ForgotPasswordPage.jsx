@@ -14,22 +14,9 @@ const ForgotPasswordPage = () => {
     const [isLoading, setIsLoading] = useState(false);
 
 
-    const checkUserExistence = async (data) => {
-        const {data: user, error: userCheckError} = await supabase.auth.getUserByEmail(data.email)
-            if(userCheckError){
-                setErrorMessage('Error checking user existence')
-                return false
-            }
-            if(user){
-                return true
-            } else {
-                return false
-            }
-        }
 
 
     const onSubmit = async (data) => {
-        if(await checkUserExistence(data)) {
             setIsLoading(true);
             try {
                 const { data: passwordResetResponse, error } = await supabase.auth.resetPasswordForEmail( data.email, {
@@ -47,9 +34,9 @@ const ForgotPasswordPage = () => {
                 setIsLoading(false);
                 setTimeout(() => {
                   setErrorMessage(null);
-                }, 2000);
+                }, 20000);
             }
-      }}
+      }
 
   return (
     <section className="">

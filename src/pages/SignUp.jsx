@@ -118,7 +118,7 @@ const SignUp = () => {
         {signupError && <p className="text-xs text-red-600 mt-2">{signupError}</p>}
         <p className="text-xs 2xl:text-sm text-[#98989A] text-center mt-2">By signing up I accept the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Terms of Service</Link> and the <Link to='/' className="font-medium underline hover:text-[#FFD11A]">Privacy Policy</Link>.</p>
         <div className="w-full h-[1px] bg-white/35 mt-9 mb-3" />
-        <p className="text-sm 2xl:text-sm text-[#98989A] text-center">Already using swirl? <Link className="font-medium underline hover:text-[#FFD11A]">Log in</Link></p>
+        <p className="text-sm 2xl:text-sm text-[#98989A] text-center">Already using swirl? <Link to='/onboarding/login' className="font-medium underline hover:text-[#FFD11A]">Log in</Link></p>
       </div>
 
       {steps > 0 && <FormStepTwo user={user} steps={steps} setUser={setUser} />}
