@@ -47,7 +47,6 @@ const ForgotPasswordPage = () => {
             <p className="text-sm 2xl:text-[16px] text-[#e9e9ef] font-normal max-w-full  my-5 text-center">
                 Enter the  email address associated with your account. We will send  a password reset link to this email address if it is associated with an account in our database. The link sent should be openwd on the same device used to request the link.
             </p>
-
             <form onSubmit={handleSubmit(onSubmit)}  className="w-full flex flex-col gap-3 items-center">
           <div className="w-full">
           <input 
@@ -69,7 +68,6 @@ const ForgotPasswordPage = () => {
             />
             {errors?.email?.message && <p className="text-xs text-left text-red-600 mt-2">{errors?.email?.message}</p>}
           </div>
-
             <button onClick={handleSubmit(onSubmit)} disabled={!isValid} className="w-full flex items-center justify-center gap-3 px-5 py-2.5 disabled:bg-white/35  disabled:text-gray-400 disabled:cursor-not-allowed bg-white hover:bg-[#FFD11A] rounded-sm text-black hover:text-white text-sm font-bold transition-all duration-200 ease-in-out">
                 <p>Request reset link</p>
                 {isLoading && <ImSpinner6 className="size-5 animate-spin" />}
