@@ -1,21 +1,26 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import supabase from "../../config/supabase";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const {pathname} = useLocation();
+  const [isUserSignedInLocal, setIsUserSignedInLocal] = useState(false);
 
-  // Get the current user session
-  const isUserSignedIn = async ()  => {
-    try {
-      const session = await supabase.auth.getSession();
-  
-      return !!session.user;
-    } catch (error) {
-      console.error('Error checking user session:', error);
-      return false; 
-    }
-  }
+  useEffect(() => {
+    const checkUserSession = async () => {
+      try {
+        const session = await supabase.auth.getSession();
+        setIsUserSignedInLocal(!!session.user);
+      } catch (error) {
+        console.error('Error checking user session:', error);
+        setIsUserSignedInLocal(false);
+      }
+    };
+
+    checkUserSession();
+    console.log(isUserSignedInLocal);
+  }, []);
 
   const signOutUser = async () => {
       const { error: signOutError } = await supabase.auth.signOut();
@@ -34,7 +39,7 @@ const Navbar = () => {
             <img src="../src/assets/swirl-logo.svg" alt="Swirl Logo" className="size-8" />
             <h1 className="font-kumbh text-2xl font-semibold text-white">Swirl</h1>
         </Link>
-        {isUserSignedIn() ? (
+        {isUserSignedInLocal ? (
           <button onClick={signOutUser} className={`px-4 py-1.5 rounded-3xl text-white bg-[#FFD11A] text-xs md:text-sm font-medium lg:font-semibold font-inter ${pathname === '/onboarding/signup' || pathname === 'onboarding/login' ? 'hidden' : 'block'}`}>
               Sign out
           </button>) : (

@@ -75,7 +75,7 @@ const SignUp = () => {
   
 
   return (
-    <section className="px-5 w-full bg-[#141414] flex flex-col justify-center items-center h-screen">
+    <section className="px-5 w-full bg-[#141414] flex flex-col justify-center items-center min-h-screen">
       <h1 className="text-2xl 2xl:text-3xl font-bold font-kumbh text-white">Sign Up</h1>
       <div className={`w-full max-w-72 2xl:max-w-sm flex-col ${steps === 0 ? 'flex' : 'hidden'}`}>
       <p className="text-sm 2xl:text-[16px] text-[#e9e9ef] font-normal max-w-full  my-5 text-center">Once you sign up, your personal feed will be ready to explore.</p>
