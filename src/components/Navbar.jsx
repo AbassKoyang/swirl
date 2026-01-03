@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import supabase from "../../config/supabase";
 import { useEffect, useState } from "react";
-import Logo from '../assets/swirl-blog.svg';
+import Logo from '../assets/swirl-logo.svg';
 
 const Navbar = () => {
   const navigate = useNavigate();
