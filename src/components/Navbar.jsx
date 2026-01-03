@@ -36,7 +36,7 @@ const Navbar = () => {
     <header className="w-full flex items-center justify-center bg-[#1A1A1A] fixed top-0 left-0 z-[1000]">
         <div className="w-full max-w-[1900px] flex items-center justify-between py-7 px-5 md:px-10 2xl:px-[162px] bg-[#1A1A1A]">
         <Link to='/' className="flex items-center gap-2">
-            <img src="../src/assets/swirl-logo.svg" alt="Swirl Logo" className="size-8" />
+            <img src="./src/assets/swirl-logo.svg" alt="Swirl Logo" className="size-8" />
             <h1 className="font-kumbh text-2xl font-semibold text-white">Swirl</h1>
         </Link>
         {isUserSignedInLocal ? (
